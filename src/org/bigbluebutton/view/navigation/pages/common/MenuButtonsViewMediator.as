@@ -2,19 +2,27 @@ package org.bigbluebutton.view.navigation.pages.common {
 	
 	import com.juankpro.ane.localnotif.Notification;
 	import com.juankpro.ane.localnotif.NotificationManager;
+	
 	import flash.desktop.NativeApplication;
 	import flash.desktop.SystemIdleMode;
+	import flash.events.BrowserInvokeEvent;
 	import flash.events.Event;
 	import flash.events.InvokeEvent;
 	import flash.events.MouseEvent;
 	import flash.events.StageOrientationEvent;
 	import flash.events.TouchEvent;
 	import flash.geom.Point;
+	import flash.utils.setTimeout;
+	
 	import mx.core.FlexGlobals;
 	import mx.core.mx_internal;
 	import mx.events.FlexEvent;
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
+	
+	import spark.components.Alert;
+	import spark.transitions.ViewTransitionBase;
+	
 	import org.bigbluebutton.command.DisconnectUserSignal;
 	import org.bigbluebutton.core.IUsersService;
 	import org.bigbluebutton.model.IUserSession;
@@ -26,8 +34,8 @@ package org.bigbluebutton.view.navigation.pages.common {
 	import org.bigbluebutton.view.navigation.pages.TransitionAnimationENUM;
 	import org.bigbluebutton.view.navigation.pages.disconnect.enum.DisconnectEnum;
 	import org.bigbluebutton.view.skins.NavigationButtonSkin;
+	
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import spark.transitions.ViewTransitionBase;
 	
 	public class MenuButtonsViewMediator extends Mediator {
 		
@@ -112,25 +120,31 @@ package org.bigbluebutton.view.navigation.pages.common {
 		}
 		
 		private function onInvokeEvent(invocation:InvokeEvent):void {
-			if (invocation.arguments.length > 0) {
-				var url:String = invocation.arguments[0].toString();
-				if (url.lastIndexOf("://") != -1) {
-					userSession.joinUrl = url;
-					if (userSession.mainConnection)
-						userSession.mainConnection.disconnect(true);
-					if (userSession.videoConnection)
-						userSession.videoConnection.disconnect(true);
-					if (userSession.voiceConnection)
-						userSession.voiceConnection.disconnect(true);
-					if (userSession.deskshareConnection)
-						userSession.deskshareConnection.disconnect(true);
-					FlexGlobals.topLevelApplication.mainshell.visible = false;
-					userUISession.popPage();
-					userUISession.pushPage(PagesENUM.LOGIN);
+			//修改IOS参数传入打开问题  增加延迟处理
+			setTimeout(function dologin():void{
+				if (invocation.arguments.length > 0) {
+					var url:String = invocation.arguments[0].toString();
+					trace(url); 
+					if (url.lastIndexOf("://") != -1) {
+						userSession.joinUrl = url;
+						if (userSession.mainConnection)
+							userSession.mainConnection.disconnect(true);
+						if (userSession.videoConnection)
+							userSession.videoConnection.disconnect(true);
+						if (userSession.voiceConnection)
+							userSession.voiceConnection.disconnect(true);
+						if (userSession.deskshareConnection)
+							userSession.deskshareConnection.disconnect(true);
+						FlexGlobals.topLevelApplication.mainshell.visible = false;
+						userUISession.popPage();
+						userUISession.pushPage(PagesENUM.LOGIN);
+					}
 				}
-			}
+				
+			},3000);
 		}
 		
+	
 		private function loggingOutHandler():void {
 			loggingOut = true;
 		}

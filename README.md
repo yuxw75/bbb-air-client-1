@@ -39,3 +39,24 @@ http://www.andygup.net/how-to-upgrade-your-air-sdk-in-flashbuilder-4-6/
 **Important: you should download the original AIR SDK without the new compiler, or you will face a bunch of weird messages during project compilation.
 You can find it here: http://airdownload.adobe.com/air/win/download/latest/AdobeAIRSDK.zip
 
+
+
+-locale zh_CN -locale en_US  -source-path=./locale/{locale} -resource-bundle-list=used-resource-bundles.txt -allow-source-path-overlap=true
+
+url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=1361469443566213&password=md&fullName=%E4%BD%99%E6%99%93%E6%96%87&logoutURL=http://lwork.hk&checksum=0753029db8c2fc6ed0ff34a9a01565295327a812";
+//url = "https://demo.bigbluebutton.org/bigbluebutton/api/join?meetingID=Demo+Meeting&fullName=ssss&password=mp&checksum=54c5a668bc8002c7efc439f15954a7b7bb6b4a6c";
+
+
+com.livecom.lworkvideo
+livecom2015
+https://www.pgyer.com/C6gO
+
+
+
+"bigbluebutton://112.74.96.171/bigbluebutton/api/join?meetingID=1361469443566213&password=md&fullName=%E4%BD%99%E6%99%93%E6%96%87&logoutURL=http://lwork.hk&checksum=0753029db8c2fc6ed0ff34a9a01565295327a812";
+		
+
+
+MenuButtonsViewMediator.as  app传值
+LoginPageViewMediator.as    app传值
+		
