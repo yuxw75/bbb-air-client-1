@@ -1,12 +1,3 @@
-Use Flash Builder to develop it.
-
-* clone this repo
-* open Flash Builder
-* Switch Workspace to the parent directory of your cloned repo
-* File-New-Flex Mobile Project
-* type "bbb-air-client"
-* Use default SDK (Flex 4.6.0)
-* Next, then Finish
 
 Add extra arguments to Flex Compiler:
 
@@ -59,4 +50,4 @@ https://www.pgyer.com/C6gO
 
 MenuButtonsViewMediator.as  app传值
 LoginPageViewMediator.as    app传值
-		
+		  
