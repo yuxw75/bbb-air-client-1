@@ -50,4 +50,7 @@ https://www.pgyer.com/C6gO
 
 MenuButtonsViewMediator.as  app传值
 LoginPageViewMediator.as    app传值
+
+https://www.pgyer.com/uE8L
+https://www.pgyer.com/C6gO
 		  
