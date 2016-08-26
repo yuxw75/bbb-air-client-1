@@ -11,7 +11,6 @@ package org.bigbluebutton.view.navigation.pages.login {
 	import mx.collections.ArrayCollection;
 	import mx.core.FlexGlobals;
 	
-	import spark.components.Alert;
 	import spark.components.Application;
 	
 	import org.bigbluebutton.command.JoinMeetingSignal;
@@ -55,7 +54,9 @@ package org.bigbluebutton.view.navigation.pages.login {
 			//loginService.unsuccessJoinedSignal.add(onUnsucess);
 			userUISession.unsuccessJoined.add(onUnsucess);
 			view.tryAgainButton.addEventListener(MouseEvent.CLICK, tryAgain);
+			//FlexGlobals.topLevelApplication.txtLog.text += "joinRoom:" +  userSession.joinUrl + "\n";
 			joinRoom(userSession.joinUrl);
+			
 		}
 		
 		private function onUnsucess(reason:String):void {
@@ -112,7 +113,7 @@ package org.bigbluebutton.view.navigation.pages.login {
 			}
 			
 			//url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=1361469443566213&password=md&fullName=%E4%BD%99%E6%99%93%E6%96%87&logoutURL=http://lwork.hk&checksum=0753029db8c2fc6ed0ff34a9a01565295327a812";
-			
+			//url = "jconf://112.74.96.171/bigbluebutton/api/join?meetingID=33901471912008140&password=md&fullName=%E6%BD%98%E5%88%98%E5%85%B5&logoutURL=http://lwork.hk&checksum=285a6d25ab5f5484fa8e97d84d345238c742e097";
 			if (url.lastIndexOf("://") != -1) {
 				url = getEndURL(url);
 			} else {
@@ -120,6 +121,7 @@ package org.bigbluebutton.view.navigation.pages.login {
 			}
 			//Alert.show(url);
 			trace(url);
+			//FlexGlobals.topLevelApplication.txtLog.text += "解析后:" +  url + "\n";
 			joinMeetingSignal.dispatch(url);
 		}
 		

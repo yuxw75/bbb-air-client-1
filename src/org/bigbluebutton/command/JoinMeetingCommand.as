@@ -1,5 +1,7 @@
 package org.bigbluebutton.command {
 	
+	import mx.core.FlexGlobals;
+	
 	import org.bigbluebutton.core.IBigBlueButtonConnection;
 	import org.bigbluebutton.core.ILoginService;
 	import org.bigbluebutton.model.ConferenceParameters;
@@ -11,6 +13,7 @@ package org.bigbluebutton.command {
 	import org.bigbluebutton.model.UserSession;
 	import org.bigbluebutton.model.VideoProfileManager;
 	import org.bigbluebutton.view.ui.ILoginButton;
+	
 	import robotlegs.bender.bundles.mvcs.Command;
 	
 	public class JoinMeetingCommand extends Command {

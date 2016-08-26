@@ -256,4 +256,9 @@
 								width="100%"
 								height="{getStyle('bottomToolBarHeight')}" />
 	</s:Group>
+	<!--
+	<s:TextArea id="txtLog" width="100%" height="200">
+		
+	</s:TextArea>
+	-->
 </s:Application>

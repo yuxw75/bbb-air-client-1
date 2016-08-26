@@ -20,7 +20,6 @@ package org.bigbluebutton.view.navigation.pages.common {
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
 	
-	import spark.components.Alert;
 	import spark.transitions.ViewTransitionBase;
 	
 	import org.bigbluebutton.command.DisconnectUserSignal;
@@ -118,13 +117,14 @@ package org.bigbluebutton.view.navigation.pages.common {
 		private function pushToTalkOff(e:MouseEvent):void {
 			userSession.voiceStreamManager.muteMicGain(true);
 		}
-		
+		 
 		private function onInvokeEvent(invocation:InvokeEvent):void {
 			//修改IOS参数传入打开问题  增加延迟处理
 			setTimeout(function dologin():void{
 				if (invocation.arguments.length > 0) {
 					var url:String = invocation.arguments[0].toString();
 					trace(url); 
+					//FlexGlobals.topLevelApplication.txtLog.text += "onInvokeEvent:" +  url + "\n";
 					if (url.lastIndexOf("://") != -1) {
 						userSession.joinUrl = url;
 						if (userSession.mainConnection)
