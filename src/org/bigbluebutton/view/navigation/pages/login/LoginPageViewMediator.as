@@ -111,17 +111,18 @@ package org.bigbluebutton.view.navigation.pages.login {
 			if (!url) {
 				url = "";
 			}
-			
+			  
 			//url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=1361469443566213&password=md&fullName=%E4%BD%99%E6%99%93%E6%96%87&logoutURL=http://lwork.hk&checksum=0753029db8c2fc6ed0ff34a9a01565295327a812";
 			//url = "jconf://112.74.96.171/bigbluebutton/api/join?meetingID=33901471912008140&password=md&fullName=%E6%BD%98%E5%88%98%E5%85%B5&logoutURL=http://lwork.hk&checksum=285a6d25ab5f5484fa8e97d84d345238c742e097";
 			if (url.lastIndexOf("://") != -1) {
 				url = getEndURL(url);
 			} else {
-				userUISession.pushPage(PagesENUM.OPENROOM);
+				userUISession.pushPage(PagesENUM.OPENROOM);  
 			}
 			//Alert.show(url);
 			trace(url);
 			//FlexGlobals.topLevelApplication.txtLog.text += "解析后:" +  url + "\n";
+			//url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=36131472517789143&password=md&fullName=test&logoutURL=http://lwork.hk&checksum=1fecdff51e2ab0e84ede77fb8113bddff63dad48";
 			joinMeetingSignal.dispatch(url);
 		}
 		

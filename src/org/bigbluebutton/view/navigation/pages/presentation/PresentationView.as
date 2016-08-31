@@ -46,7 +46,7 @@ package org.bigbluebutton.view.navigation.pages.presentation {
 		}
 		
 		public function setPresentationName(name:String):void {
-			FlexGlobals.topLevelApplication.pageName.text = name;
+			FlexGlobals.topLevelApplication.pageName.text = ResourceManager.getInstance().getString('resources', 'whiteBoard.demoFile') + name;
 		}
 		
 		public function setSlide(s:Slide):void {
