@@ -46,7 +46,7 @@ https://www.pgyer.com/C6gO
 
 "bigbluebutton://112.74.96.171/bigbluebutton/api/join?meetingID=1361469443566213&password=md&fullName=%E4%BD%99%E6%99%93%E6%96%87&logoutURL=http://lwork.hk&checksum=0753029db8c2fc6ed0ff34a9a01565295327a812";
 		
-
+视频设置中文 需要在web端改profile.xml文件 加入中文即可
 
 MenuButtonsViewMediator.as  app传值
 LoginPageViewMediator.as    app传值
