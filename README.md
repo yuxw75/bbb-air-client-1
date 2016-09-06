@@ -53,4 +53,7 @@ LoginPageViewMediator.as    app传值
 
 https://www.pgyer.com/uE8L
 https://www.pgyer.com/C6gO
+
+
+CameraSettingsViewMediator 切换摄像头
 		  
