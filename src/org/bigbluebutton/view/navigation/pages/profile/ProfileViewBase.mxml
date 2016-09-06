@@ -43,7 +43,7 @@
 					  width="100%"
 					  label="{resourceManager.getString('resources', 'cameraSettings.title')}"
 					  styleName="cameraSettingsButtonStyle profileSettingsButtonStyle videoAudioSettingStyle contentFontSize" />
-			<s:Button id="shareMicBtn0"
+			<s:Button id="shareMicBtn0" visible="false" includeInLayout="false"
 					  width="100%"
 					  label="{resourceManager.getString('resources', 'audioSettings.title')}"
 					  styleName="audioSettingsButtonStyle profileSettingsButtonStyle videoAudioSettingStyle contentFontSize" />

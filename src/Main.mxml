@@ -24,11 +24,14 @@
 			import com.adobe.utils.LocaleUtil;
 			import com.juankpro.ane.localnotif.Notification;
 			import com.juankpro.ane.localnotif.NotificationManager;
+			
 			import flash.system.Capabilities;
+			
 			import mx.core.FlexGlobals;
 			import mx.events.FlexEvent;
 			import mx.events.ResizeEvent;
 			import mx.resources.ResourceManager;
+			
 			import org.bigbluebutton.AppConfig;
 			import org.bigbluebutton.core.util.OrientationCalculator;
 			import org.bigbluebutton.core.view.NoTabView;
@@ -69,12 +72,16 @@
 			import org.bigbluebutton.view.ui.videobutton.VideoButtonConfig;
 			import org.osmf.logging.Log;
 			import org.osmf.logging.Logger;
+			
 			import robotlegs.bender.bundles.mvcs.MVCSBundle;
 			import robotlegs.bender.extensions.contextView.ContextView;
 			import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 			import robotlegs.bender.framework.api.IContext;
 			import robotlegs.bender.framework.api.LogLevel;
 			import robotlegs.bender.framework.impl.Context;
+			
+			import wg.caller.Call;
+			import wg.caller.notify.Notify;
 			
 			protected var context:IContext;
 			
@@ -173,7 +180,44 @@
 			}
 			
 			protected function creationCompleteHandler(event:FlexEvent):void {
+				
+				//修改: 添加切换摄像头处理
+				btnSwapCamera.addEventListener(MouseEvent.CLICK,onBtnSwapCameraHandler);
+				//btnOpenCam.addEventListener(MouseEvent.CLICK,onBtnOpenCamHandler);
+				//btnCloseCam.addEventListener(MouseEvent.CLICK,onBtnCloseCamHandler);
+				//btnOpenMic.addEventListener(MouseEvent.CLICK,onBtnOpenMicHandler);
+				//btnCloseMic.addEventListener(MouseEvent.CLICK,onBtnCloseMicHandler);
 			}
+			
+			//修改: 添加切换摄像头处理
+			protected function onBtnSwapCameraHandler(event:MouseEvent):void
+			{
+				Call.dispatch(Notify.SWAP_CAMERA);
+			}
+//			
+//			//修改: 添加打开摄像头处理
+//			protected function onBtnOpenCamHandler(event:MouseEvent):void
+//			{
+//				Call.dispatch(Notify.OPEN_CAMERA);
+//			}
+			
+//			//修改: 添加关闭摄像头处理
+//			protected function onBtnCloseCamHandler(event:MouseEvent):void
+//			{
+//				Call.dispatch(Notify.CLOSE_CAMERA);
+//			}
+//			
+//			//修改: 添加打开麦克风处理
+//			protected function onBtnOpenMicHandler(event:MouseEvent):void
+//			{
+//				Call.dispatch(Notify.OPEN_MIC);
+//			}
+//			
+//			//修改: 添加关闭麦克风处理
+//			protected function onBtnCloseMicHandler(event:MouseEvent):void
+//			{
+//				Call.dispatch(Notify.CLOSE_MIC);
+//			}
 			
 			protected function applicationCompleteHandler(event:FlexEvent):void {
 				NativeApplication.nativeApplication.systemIdleMode = SystemIdleMode.KEEP_AWAKE;
@@ -201,6 +245,9 @@
 				var tablet:Boolean = ((Math.max(this.width, this.height) / Capabilities.screenDPI) >= 7)
 				return landscape && tablet;
 			}
+		
+			
+			
 		]]>
 	</fx:Script>
 
@@ -242,10 +289,34 @@
 				<ui:RecordingStatus id="recordingStatus"
 									styleName="recordingStatusIconStyle topButtonStyle"
 									visible="false" />
+				<!--打开摄像头
+				<s:Button id="btnOpenCam" styleName="openCamButtonStyle topButtonStyle"/>-->
+				<videobutton:VideoButton id="videoBtn"
+										 styleName="openCamButtonStyle topButtonStyle" />
+				
+				<micbutton:MicButton id="microphoneBtn"
+									 styleName="openMicButtonStyle topButtonStyle" />
+				
+				<!--原有按钮
 				<videobutton:VideoButton id="videoBtn"
 										 styleName="videoButtonStyle topButtonStyle" />
+				
 				<micbutton:MicButton id="microphoneBtn"
-									 styleName="micButtonStyle topButtonStyle" />
+									 styleName="micButtonStyle topButtonStyle" />-->
+				<!--切换摄像头-->
+				<s:Button id="btnSwapCamera"
+						  styleName="swapCameraButtonStyle topButtonStyle"/>
+				
+				<!--打开麦克风
+				<s:Button id="btnOpenMic"
+						  styleName="openMicButtonStyle topButtonStyle"/>-->
+				<!--关闭麦克风
+				<s:Button id="btnCloseMic"
+						  styleName="closeMicButtonStyle topButtonStyle" visible="false" includeInLayout="false"/>-->
+								
+				<!--关闭摄像头
+				<s:Button id="btnCloseCam" styleName="closeCamButtonStyle topButtonStyle" visible="false" includeInLayout="false"/>-->
+				
 			</s:HGroup>
 		</s:SkinnableContainer>
 

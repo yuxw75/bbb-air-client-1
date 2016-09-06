@@ -49,7 +49,7 @@
 					</s:layout>
 					<cameraprofiles:CameraProfilesList id="cameraprofileslist"
 													   width="100%" />
-
+					<!--修改:添加三个按钮-->
 					<s:HGroup width="100%">
 						<s:Button visible.bbb="false"
 								  includeInLayout.bbb="false"
@@ -58,11 +58,12 @@
 								  styleName="cameraSettingsRotateButtonStyle videoAudioSettingStyle contentFontSize"
 								  label="{resourceManager.getString('resources', 'cameraSettings.rotate')}" />
 					</s:HGroup>
-					<s:Button id="swapCameraBtn0"
+					<!--修改:添加三个按钮-->
+					<s:Button id="swapCameraBtn0" visible="false" includeInLayout="false"
 							  styleName="cameraSettingsSwapButtonStyle videoAudioSettingStyle contentFontSize"
 							  width="100%"
 							  label="{resourceManager.getString('resources', 'cameraSettings.swap')}" />
-					<s:Button id="startCameraButton0"
+					<s:Button id="startCameraButton0" visible="false" includeInLayout="false"
 							  styleName="cameraSettingsStartButtonStyle videoAudioSettingStyle contentFontSize"
 							  width="100%"
 							  label="{resourceManager.getString('resources', 'userDetail.cameraBtn.text')}" />

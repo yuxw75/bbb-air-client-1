@@ -122,7 +122,7 @@ package org.bigbluebutton.view.navigation.pages.login {
 			//Alert.show(url);
 			trace(url);
 			//FlexGlobals.topLevelApplication.txtLog.text += "解析后:" +  url + "\n";
-			//url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=36131472517789143&password=md&fullName=test&logoutURL=http://lwork.hk&checksum=1fecdff51e2ab0e84ede77fb8113bddff63dad48";
+			//url = "http://112.74.96.171/bigbluebutton/api/join?meetingID=36131472517789143&password=md&fullName=test&checksum=9ca58b41dc38cc06de85afdcf8f0c98aeb18d95d";
 			joinMeetingSignal.dispatch(url);
 		}
 		

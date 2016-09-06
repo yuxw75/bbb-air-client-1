@@ -517,6 +517,36 @@ s|Image.bigbbbLogoStyle
 		backgroundImage: Embed(source="assets/res/drawable-mdpi/video.png");
 	}
 	
+	/*切换摄像头图标*/
+	s|Button.swapCameraButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/change_camera.png");
+	}
+	
+	/*打开麦克风图标*/
+	s|Button.openMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/open_micro_mode.png");
+	}
+	
+	/*关闭麦克风图标*/
+	s|Button.closeMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_micro_mode.png");
+	}
+	
+	/*打开摄像头图标*/
+	s|Button.openCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/open_moive_mode.png");
+	}
+	
+	/*关闭摄像头图标*/
+	s|Button.closeCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_moive_mode.png");
+	}
+	
 	s|Image.iconStyle
 	{
 		width: 32;
@@ -994,6 +1024,36 @@ s|Image.bigbbbLogoStyle
 	s|Button.videoButtonStyle
 	{
 		backgroundImage: Embed(source="assets/res/drawable-hdpi/video.png");
+	}
+	
+	/*切换摄像头图标*/
+	s|Button.swapCameraButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/change_camera.png");
+	}
+	
+	/*打开麦克风图标*/
+	s|Button.openMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/open_micro_mode.png");
+	}
+	
+	/*关闭麦克风图标*/
+	s|Button.closeMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/close_micro_mode.png");
+	}
+	
+	/*打开摄像头图标*/
+	s|Button.openCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/open_moive_mode.png");
+	}
+	
+	/*关闭摄像头图标*/
+	s|Button.closeCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/close_moive_mode.png");
 	}
 	
 	s|Image.iconStyle
@@ -1475,6 +1535,37 @@ s|Image.bigbbbLogoStyle
 		backgroundImage: Embed(source="assets/res/drawable-xhdpi/video.png");
 	}
 	
+	/*切换摄像头图标*/
+	s|Button.swapCameraButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/change_camera.png");
+	}
+	
+	/*打开麦克风图标*/
+	s|Button.openMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/open_micro_mode.png");
+	}
+	
+	/*关闭麦克风图标*/
+	s|Button.closeMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/close_micro_mode.png");
+	}
+	
+	/*打开摄像头图标*/
+	s|Button.openCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/open_moive_mode.png");
+	}
+	
+	/*关闭摄像头图标*/
+	s|Button.closeCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/close_moive_mode.png");
+	}
+	
+	
 	s|Image.iconStyle
 	{
 		width: 64;
@@ -1954,6 +2045,36 @@ s|Image.bigbbbLogoStyle
 	s|Button.videoButtonStyle
 	{
 		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/video.png");
+	}
+	
+	/*切换摄像头图标*/
+	s|Button.swapCameraButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/change_camera.png");
+	}
+	
+	/*打开麦克风图标*/
+	s|Button.openMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/open_micro_mode.png");
+	}
+	
+	/*关闭麦克风图标*/
+	s|Button.closeMicButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_micro_mode.png");
+	}
+	
+	/*打开摄像头图标*/
+	s|Button.openCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/open_moive_mode.png");
+	}
+	
+	/*关闭摄像头图标*/
+	s|Button.closeCamButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/close_moive_mode.png");
 	}
 	
 	s|Image.iconStyle

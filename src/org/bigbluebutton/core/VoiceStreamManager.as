@@ -103,7 +103,7 @@ package org.bigbluebutton.core {
 			}
 			_mic = getMicrophone(codec);
 			//修改:回音消除处理 AEC 2016.8.31
-//			_mic.gain = pushToTalk ? 0 : _defaultMicGain;
+			_mic.gain = pushToTalk ? 0 : _defaultMicGain;
 		}
 		
 		/**
@@ -112,84 +112,84 @@ package org.bigbluebutton.core {
 		 */
 		private function getMicrophone(codec:String):Microphone {
 			//修改:回音消除处理 AEC 2016.8.31
-//			var mic:Microphone = null;
-//			mic = Microphone.getEnhancedMicrophone();
-//			if (mic) {
-//				var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
-//				options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
-//				options.autoGain = false;
-//				options.echoPath = 128;
-//				options.nonLinearProcessing = true;
-//				mic['enhancedOptions'] = options;
-//				mic.setUseEchoSuppression(true);
-//			} else {
-//				mic = Microphone.getMicrophone();
-//			}
-//			if (mic == null) {
-//				trace("No microphone! <o>");
-//			} else {
-//				mic.addEventListener(StatusEvent.STATUS, onMicStatusEvent);
-//				mic.setLoopBack(false);
-//				mic.setSilenceLevel(0, 20000);
-//				mic.gain = 60;
-//				if (codec == "SPEEX") {
-//					mic.encodeQuality = 6;
-//					mic.codec = SoundCodec.SPEEX;
-//					mic.framesPerPacket = 1;
-//					mic.rate = 16;
-//					trace("Using SPEEX wideband codec");
-//				} else {
-//					mic.codec = SoundCodec.NELLYMOSER;
-//					mic.rate = 8;
-//					trace("Using Nellymoser codec");
-//				}
-//			}
-//			return mic;
-			
-			
-			
-			var _microphone:Microphone;				
-			try
-			{
-				_microphone =Microphone.getEnhancedMicrophone();
+			var mic:Microphone = null;
+			mic = Microphone.getEnhancedMicrophone();
+			if (mic) {
+				var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
+				options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
+				options.autoGain = false;
+				options.echoPath = 128;
+				options.nonLinearProcessing = true;
+				mic['enhancedOptions'] = options;
+				mic.setUseEchoSuppression(true);
+			} else {
+				mic = Microphone.getMicrophone();
 			}
-			catch(e:Error)
-			{
-				_microphone= null;			
-			}			
-			if(_microphone == null)
-			{				
-				try
-				{
-					_microphone =Microphone.getMicrophone();
+			if (mic == null) {
+				trace("No microphone! <o>");
+			} else {
+				mic.addEventListener(StatusEvent.STATUS, onMicStatusEvent);
+				mic.setLoopBack(false);
+				mic.setSilenceLevel(0, 20000);
+				mic.gain = 60;
+				if (codec == "SPEEX") {
+					mic.encodeQuality = 6;
+					mic.codec = SoundCodec.SPEEX;
+					mic.framesPerPacket = 1;
+					mic.rate = 16;
+					trace("Using SPEEX wideband codec");
+				} else {
+					mic.codec = SoundCodec.NELLYMOSER;
+					mic.rate = 8;
+					trace("Using Nellymoser codec");
 				}
-				catch(e:Error)
-				{
-					_microphone= null;
-				}				
-			}			
-			if(_microphone == null)
-			{
-				return null;
-			}			
-			_microphone.codec = SoundCodec.PCMA;	
-			_microphone.gain = 50;
-			//_microphone.setUseEchoSuppression(true);
-			_microphone.setLoopBack(false);
+			}
+			return mic;
 			
 			
-			var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
-			//模式，默认使用全双工模式
-			options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
-			//是否启用自动增益控制
-			//options.autoGain = true;
-			//回声路径,值越大，回声抑制效果越好，但声音的延迟会越大，消耗的资源会越多，值取128或256
-			options.echoPath = 128;
-			//非线性处理，处理乐音时最好关闭
-			options.nonLinearProcessing = true;
-			_microphone.enhancedOptions=options;
-			
-			return _microphone;	
+//			
+//			var _microphone:Microphone;				
+//			try
+//			{
+//				_microphone =Microphone.getEnhancedMicrophone();
+//			}
+//			catch(e:Error)
+//			{
+//				_microphone= null;			
+//			}			
+//			if(_microphone == null)
+//			{				
+//				try
+//				{
+//					_microphone =Microphone.getMicrophone();
+//				}
+//				catch(e:Error)
+//				{
+//					_microphone= null;
+//				}				
+//			}			
+//			if(_microphone == null)
+//			{
+//				return null;
+//			}			
+//			_microphone.codec = SoundCodec.PCMA;	
+//			_microphone.gain = 50;
+//			//_microphone.setUseEchoSuppression(true);
+//			_microphone.setLoopBack(false);
+//			
+//			
+//			var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
+//			//模式，默认使用全双工模式
+//			options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
+//			//是否启用自动增益控制
+//			//options.autoGain = true;
+//			//回声路径,值越大，回声抑制效果越好，但声音的延迟会越大，消耗的资源会越多，值取128或256
+//			options.echoPath = 128;
+//			//非线性处理，处理乐音时最好关闭
+//			options.nonLinearProcessing = true;
+//			_microphone.enhancedOptions=options;
+//			
+//			return _microphone;	
 			
 			
 		}

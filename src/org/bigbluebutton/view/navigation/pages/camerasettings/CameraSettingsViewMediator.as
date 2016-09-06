@@ -8,12 +8,16 @@ package org.bigbluebutton.view.navigation.pages.camerasettings {
 	import flash.media.Camera;
 	import flash.media.CameraPosition;
 	import flash.media.Video;
+	
 	import mx.collections.ArrayCollection;
 	import mx.core.FlexGlobals;
 	import mx.events.IndexChangedEvent;
 	import mx.events.ItemClickEvent;
 	import mx.events.ResizeEvent;
 	import mx.resources.ResourceManager;
+	
+	import spark.events.IndexChangeEvent;
+	
 	import org.bigbluebutton.command.CameraQualitySignal;
 	import org.bigbluebutton.command.ShareCameraSignal;
 	import org.bigbluebutton.core.ISaveData;
@@ -27,8 +31,11 @@ package org.bigbluebutton.view.navigation.pages.camerasettings {
 	import org.bigbluebutton.model.UserSession;
 	import org.bigbluebutton.view.navigation.pages.PagesENUM;
 	import org.bigbluebutton.view.ui.SwapCameraButton;
+	
 	import robotlegs.bender.bundles.mvcs.Mediator;
-	import spark.events.IndexChangeEvent;
+	
+	import wg.caller.Call;
+	import wg.caller.notify.Notify;
 	
 	public class CameraSettingsViewMediator extends Mediator {
 		
@@ -85,8 +92,9 @@ package org.bigbluebutton.view.navigation.pages.camerasettings {
 			view.cameraProfilesList.addEventListener(IndexChangeEvent.CHANGE, onCameraQualitySelected);
 			FlexGlobals.topLevelApplication.pageName.text = ResourceManager.getInstance().getString('resources', 'cameraSettings.title');
 			displayPreviewCamera();
+			
 		}
-		
+			
 		private function stageOrientationChangingHandler(e:Event):void {
 			var tabletLandscape = FlexGlobals.topLevelApplication.isTabletLandscape();
 			if (tabletLandscape) {
@@ -127,7 +135,7 @@ package org.bigbluebutton.view.navigation.pages.camerasettings {
 			}
 		}
 		
-		protected function onShareCameraClick(event:MouseEvent):void {
+		protected function onShareCameraClick(event:MouseEvent = null):void {
 			setRotateCameraButtonEnable(userSession.userList.me.hasStream);
 			setQualityListEnable(userSession.userList.me.hasStream);
 			view.cameraProfilesList.selectedIndex = dataProvider.getItemIndex(userSession.videoConnection.selectedCameraQuality);
@@ -243,7 +251,7 @@ package org.bigbluebutton.view.navigation.pages.camerasettings {
 		 * Raised on button click, will send signal to swap camera source
 		 **/
 		//close old stream on swap
-		private function mouseClickHandler(e:MouseEvent):void {
+		private function mouseClickHandler(e:MouseEvent = null):void {
 			if (!userSession.userList.me.hasStream) {
 				if (String(userSession.videoConnection.cameraPosition) == CameraPosition.FRONT) {
 					userSession.videoConnection.cameraPosition = CameraPosition.BACK;
