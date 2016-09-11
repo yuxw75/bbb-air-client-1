@@ -57,3 +57,4 @@ https://www.pgyer.com/C6gO
 
 CameraSettingsViewMediator 切换摄像头
 		  
+https://github.com/lheberlie/android-ios-template-ane-flex  
