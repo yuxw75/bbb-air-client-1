@@ -22,6 +22,7 @@
 	<fx:Script>
 		<![CDATA[
 			import com.adobe.utils.LocaleUtil;
+			import com.conf.videoMeeting.VideoMeetingANE;
 			import com.juankpro.ane.localnotif.Notification;
 			import com.juankpro.ane.localnotif.NotificationManager;
 			
@@ -187,6 +188,10 @@
 				//btnCloseCam.addEventListener(MouseEvent.CLICK,onBtnCloseCamHandler);
 				//btnOpenMic.addEventListener(MouseEvent.CLICK,onBtnOpenMicHandler);
 				//btnCloseMic.addEventListener(MouseEvent.CLICK,onBtnCloseMicHandler);
+				if (Capabilities.version.indexOf('IOS') == -1) {
+					this.openSpeaker.visible = this.openSpeaker.includeInLayout = true;
+				}
+				
 			}
 			
 			//修改: 添加切换摄像头处理
@@ -226,6 +231,7 @@
 				//_orientationCalc = new OrientationCalculator(pagesNavigatorView, accelerometerCallback);
 				//_orientationCalc.active = true;
 				//currentOrientation = _orientationCalc.currentOrientation;
+				
 			}
 			
 			private function stageOrientationChangingHandler(e:Event):void {
@@ -247,6 +253,24 @@
 			}
 		
 			
+			
+			protected function openSpeaker_clickHandler(event:MouseEvent):void
+			{
+				
+				var myANE:VideoMeetingANE = VideoMeetingANE.getInstance();
+				myANE.isSupported(true);
+				this.openSpeaker.visible = this.openSpeaker.includeInLayout = false;
+				this.closeSpeaker.visible = this.closeSpeaker.includeInLayout = true;
+			}
+			
+			protected function closeSpeaker_clickHandler(event:MouseEvent):void
+			{
+					var myANE:VideoMeetingANE = VideoMeetingANE.getInstance();
+					myANE.isSupported(false);
+					
+					this.openSpeaker.visible = this.openSpeaker.includeInLayout = true;
+					this.closeSpeaker.visible = this.closeSpeaker.includeInLayout = false;
+			}
 			
 		]]>
 	</fx:Script>
@@ -296,6 +320,9 @@
 				
 				<micbutton:MicButton id="microphoneBtn"
 									 styleName="openMicButtonStyle topButtonStyle" />
+				
+				<s:Button id="openSpeaker" click="openSpeaker_clickHandler(event)" styleName="openSpeakerButtonStyle topButtonStyle" visible="false" includeInLayout="false"/>
+				<s:Button id="closeSpeaker" click="closeSpeaker_clickHandler(event)" styleName="closeSpeakerButtonStyle topButtonStyle" visible="false" includeInLayout="false"/>
 				
 				<!--原有按钮
 				<videobutton:VideoButton id="videoBtn"

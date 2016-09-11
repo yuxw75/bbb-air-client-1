@@ -18,11 +18,11 @@
 	<id>com.livecom.lworkvideo</id>
 
 	<!-- Used as the filename for the application. Required. -->
-	<filename>jconf</filename>
+	<filename>videomeeting</filename>
 
 	<!-- The name that is displayed in the AIR application installer.
 	May have multiple values for each language. See samples or xsd schema file. Optional. -->
-	<name>jconf</name>
+	<name>videomeeting</name>
 	<!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade.
 	Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
 	An updated version of application must have a versionNumber value higher than the previous version. Required for namespace >= 2.5 . -->
@@ -108,7 +108,7 @@
 		<!-- Whether or not to pan when a soft keyboard is raised or lowered (either "pan" or "none").  Optional.  Defaults "pan." -->
 		<!-- <softKeyboardBehavior></softKeyboardBehavior> -->
 		<autoOrients>false</autoOrients>
-		<aspectRatio>landscape</aspectRatio>
+ 		<aspectRatio>landscape</aspectRatio>
 		<fullScreen>false</fullScreen>
 		<visible>true</visible>
 		<softKeyboardBehavior>none</softKeyboardBehavior>
@@ -321,8 +321,10 @@
 		</InfoAdditions>
 		<requestedDisplayResolution>high</requestedDisplayResolution>
 	</iPhone>
-	<extensions>
-		<extensionID>com.freshplanet.AirCapabilities</extensionID>
-		<extensionID>com.juankpro.ane.LocalNotification</extensionID>
-	</extensions>
+	
+<extensions>
+        <extensionID>com.freshplanet.AirCapabilities</extensionID>
+        <extensionID>com.juankpro.ane.LocalNotification</extensionID>
+        <extensionID>com.conf.videoMeeting</extensionID>
+    </extensions>
 </application>

@@ -146,6 +146,13 @@ package org.bigbluebutton.core {
 			}
 			return mic;
 			
+			//官方文档
+//			mic = Microphone.getEnhancedMicrophone();
+//			mic.gain=60;
+//			mic.rate =22;
+//			return mic;
+
+			
 			
 //			
 //			var _microphone:Microphone;				

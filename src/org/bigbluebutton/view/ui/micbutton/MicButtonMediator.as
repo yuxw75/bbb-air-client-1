@@ -1,6 +1,8 @@
 package org.bigbluebutton.view.ui.micbutton {
 	
+	
 	import flash.events.MouseEvent;
+	import flash.system.Capabilities;
 	
 	import org.bigbluebutton.command.MicrophoneMuteSignal;
 	import org.bigbluebutton.command.ShareMicrophoneSignal;
@@ -72,6 +74,7 @@ package org.bigbluebutton.view.ui.micbutton {
 			audioOptions.shareMic = userSession.userList.me.voiceJoined = !isjoin;
 			audioOptions.listenOnly = userSession.userList.me.listenOnly = isjoin;
 			shareMicrophoneSignal.dispatch(audioOptions);
+			
 		}
 		
 		/**

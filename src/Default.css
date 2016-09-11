@@ -547,6 +547,18 @@ s|Image.bigbbbLogoStyle
 		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_moive_mode.png");
 	}
 	
+	/*打开扬声器图标*/
+	s|Button.openSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/open_speaker_mode.png");
+	}
+	
+	/*关闭扬声器图标*/
+	s|Button.closeSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_speaker_mode.png");
+	}
+	
 	s|Image.iconStyle
 	{
 		width: 32;
@@ -1054,6 +1066,18 @@ s|Image.bigbbbLogoStyle
 	s|Button.closeCamButtonStyle
 	{
 		backgroundImage: Embed(source="assets/res/drawable-hdpi/close_moive_mode.png");
+	}
+	
+	/*打开扬声器图标*/
+	s|Button.openSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/open_speaker_mode.png");
+	}
+	
+	/*关闭扬声器图标*/
+	s|Button.closeSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-hdpi/close_speaker_mode.png");
 	}
 	
 	s|Image.iconStyle
@@ -1565,6 +1589,17 @@ s|Image.bigbbbLogoStyle
 		backgroundImage: Embed(source="assets/res/drawable-xhdpi/close_moive_mode.png");
 	}
 	
+	/*打开扬声器图标*/
+	s|Button.openSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/open_speaker_mode.png");
+	}
+	
+	/*关闭扬声器图标*/
+	s|Button.closeSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xhdpi/close_speaker_mode.png");
+	}
 	
 	s|Image.iconStyle
 	{
@@ -2062,7 +2097,7 @@ s|Image.bigbbbLogoStyle
 	/*关闭麦克风图标*/
 	s|Button.closeMicButtonStyle
 	{
-		backgroundImage: Embed(source="assets/res/drawable-mdpi/close_micro_mode.png");
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/close_micro_mode.png");
 	}
 	
 	/*打开摄像头图标*/
@@ -2075,6 +2110,18 @@ s|Image.bigbbbLogoStyle
 	s|Button.closeCamButtonStyle
 	{
 		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/close_moive_mode.png");
+	}
+	
+	/*打开扬声器图标*/
+	s|Button.openSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/open_speaker_mode.png");
+	}
+	
+	/*关闭扬声器图标*/
+	s|Button.closeSpeakerButtonStyle
+	{
+		backgroundImage: Embed(source="assets/res/drawable-xxhdpi/close_speaker_mode.png");
 	}
 	
 	s|Image.iconStyle
